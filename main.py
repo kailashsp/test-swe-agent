@@ -1,12 +1,12 @@
-import cv2
 import numpy as np
+from PIL import Image
 
 
 def main():
-    img1 = cv2.imread("patch_1.png")
-    img2 = cv2.imread("patch_2.png")
+    img1 = Image.open("patch_1.png")
+    img2 = Image.open("patch_2.png")
     merged_img = np.concatenate((img1, img2), axis=1)
-    cv2.imwrite("merged.png", merged_img)
+    merged_img.save("merged.png", merged_img)
 
 
 if __name__ == "__main__":
